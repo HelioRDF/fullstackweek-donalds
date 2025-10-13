@@ -74,10 +74,14 @@ Framework:
   > npm install -D ts-node@10.9.2
 
 - Shadcn/ui
-  > npx shadcn@@2.3.0 init
+  > npx shadcn@2.3.0 init
+  > npx shadcn@2.3.0 add button
 
 Boas Praticas:
 https://www.conventionalcommits.org/en/v1.0.0/
+
+> npm install -D eslint-plugin-simple-import-sort@12.1.1
+> npm install -D prettier-plugin-tailwindcss@0.6.5
 
 ---
 
