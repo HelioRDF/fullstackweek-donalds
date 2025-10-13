@@ -70,7 +70,11 @@ Framework:
   https://neon.com/
 
 - Executar códigos TS
+
   > npm install -D ts-node@10.9.2
+
+- Shadcn/ui
+  > npx shadcn@@2.3.0 init
 
 Boas Praticas:
 https://www.conventionalcommits.org/en/v1.0.0/
