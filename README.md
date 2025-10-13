@@ -35,6 +35,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+Figma:
+https://www.figma.com/design/sJtDO8WNiDcehboerUdlRq/FSW-Donald%E2%80%99s?node-id=440-199&p=f
+
 Extensions:
 
 - poimandres
@@ -61,9 +64,13 @@ Framework:
   > npx prisma init
   > npx prisma format
   > npx prisma migrate dev //add_initial_tables
+  > npx prisma db seed //Popular base com dados do seed.ts
 
 - NEON DB (Banco de dados)
   https://neon.com/
+
+- Executar códigos TS
+  > npm install -D ts-node@10.9.2
 
 Boas Praticas:
 https://www.conventionalcommits.org/en/v1.0.0/
