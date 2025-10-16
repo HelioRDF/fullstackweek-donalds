@@ -76,6 +76,7 @@ Framework:
 - Shadcn/ui
   > npx shadcn@2.3.0 init
   > npx shadcn@2.3.0 add button
+  > npx shadcn@2.3.0 add card
 
 Boas Praticas:
 https://www.conventionalcommits.org/en/v1.0.0/
