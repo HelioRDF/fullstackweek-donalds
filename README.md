@@ -78,6 +78,7 @@ Framework:
   > npx shadcn@2.3.0 add button
   > npx shadcn@2.3.0 add card
   > npx shadcn@2.3.0 add scroll-area
+  > npx shadcn@2.3.0 add sheet
 
 Boas Praticas:
 https://www.conventionalcommits.org/en/v1.0.0/
