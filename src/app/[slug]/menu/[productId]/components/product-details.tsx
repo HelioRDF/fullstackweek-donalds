@@ -85,28 +85,30 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
               </Button>
             </div>
           </div>
-          <ScrollArea className="h-full">
+          <ScrollArea className="h-full ">
             <div className="mt-6 space-y-3">
               <h4 className="font-semibold">Sobre</h4>
               <p className="text-sm text-mute"> {product.description}</p>
             </div>
 
-            <div className="mt-6 space-y-3">
+            <div className="mt-9 space-y-3">
               <div className="5 flex items-center gap-1">
-                <ChefHatIcon size={18}></ChefHatIcon>
+                <ChefHatIcon size={16}></ChefHatIcon>
                 <h4 className="font-semibold">Ingredientes</h4>
               </div>
-              <div>
+              <div className="pb-20 h-full space-y-9">
                 <ul className="list-disc px-5 text-sm text-mute">
                   {product.ingredients.map((ingredient: string) => {
                     return <li key={ingredient}>{ingredient}</li>;
                   })}
                 </ul>
               </div>
+              <br></br>
+              <br></br>
             </div>
           </ScrollArea>
         </div>
-        <Button className="mt-9 w-full " onClick={handleAddToCart}>
+        <Button className="pt=9 w-full " onClick={handleAddToCart}>
           Adicionar à Sacola
         </Button>
       </div>
