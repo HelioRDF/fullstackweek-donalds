@@ -4,14 +4,10 @@ import Image from "next/image";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-  ChevronsRightIcon,
-  Scroll,
-  Trash2Icon,
   TrashIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useContext } from "react";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface CartItemProps {
   product: CartProduct;
