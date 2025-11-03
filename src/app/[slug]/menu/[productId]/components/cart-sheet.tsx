@@ -1,20 +1,19 @@
 import { useContext } from "react";
-import CardProductItem from "./cart-product-item";
 
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import { formatCurrency } from "@/helpers/format-currency";
 
 import { CartContext } from "../../context/cart";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { formatCurrency } from "@/helpers/format-currency";
+import CardProductItem from "./cart-product-item";
+import FinishOrderButton from "./finish-order-button";
 
 const CartSheet = () => {
   const { isOpen, toggleCart, products, total } = useContext(CartContext);
@@ -46,7 +45,7 @@ const CartSheet = () => {
               </div>
             </CardContent>
           </Card>
-          <Button className="w-full">Concluir Pedido!</Button>
+          <FinishOrderButton></FinishOrderButton>
         </div>
       </SheetContent>
     </Sheet>

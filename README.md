@@ -74,12 +74,18 @@ Framework:
   > npm install -D ts-node@10.9.2
 
 - Shadcn/ui
+
   > npx shadcn@2.3.0 init
   > npx shadcn@2.3.0 add button
   > npx shadcn@2.3.0 add card
   > npx shadcn@2.3.0 add scroll-area
   > npx shadcn@2.3.0 add sheet
   > npx shadcn@2.3.0 add drawer
+  > npx shadcn@2.3.0 add form
+  > npx shadcn@2.3.0 add input
+
+  - Number Format
+    > npm i react-number-format@5.4.3
 
 Boas Praticas:
 https://www.conventionalcommits.org/en/v1.0.0/
