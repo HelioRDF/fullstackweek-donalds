@@ -85,6 +85,7 @@ Framework:
   > npx shadcn@2.3.0 add drawer
   > npx shadcn@2.3.0 add form
   > npx shadcn@2.3.0 add input
+  > npx shadcn@2.3.0 add sonner
   - Number Format
     > npm i react-number-format@5.4.3
 

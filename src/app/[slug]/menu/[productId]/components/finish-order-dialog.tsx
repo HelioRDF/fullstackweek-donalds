@@ -33,6 +33,7 @@ import { Input } from "@/components/ui/input";
 import { createOrder } from "../../actions/create-order";
 import { CartContext } from "../../context/cart";
 import { isValidCpf } from "../../helpers/cpf";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, {
@@ -86,6 +87,8 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
         slug,
       });
       onOpenChange(false);
+      toast.success("Pedido encaminhado com sucesso!");
+      
     } catch (error) {
       console.error(error);
     }
@@ -149,10 +152,9 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                   {isLoading && <Loader2Icon className="animate-spin" />}
                   Confirmar Pedido
                 </Button>
-                <DrawerClose>
-                  <Button variant="outline" className="w-full rounded-full">
+                <DrawerClose className="w-full rounded-full">
                     {msgVoltar}
-                  </Button>
+                 
                 </DrawerClose>
               </DrawerFooter>
             </form>

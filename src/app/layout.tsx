@@ -3,6 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
+import { Toaster } from "@/components/ui/sonner";
+
 import { CartProvider } from "./[slug]/menu/context/cart";
 
 const poppins = Poppins({
@@ -24,6 +26,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
         <CartProvider>{children}</CartProvider>
+        <div className="flex flex-wrap gap-2">
+          <Toaster className="toaster-center w-full" />
+        </div>
       </body>
     </html>
   );

@@ -48,3 +48,20 @@ body {
     @apply h-full;
   }
 }
+.sonner-container {
+  position: fixed !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none;
+  z-index: 9999;
+  background-color: transparent; /* fundo do container transparente */
+}
+.sonner-container > * {
+  pointer-events: auto;
+  color: #ffffff !important; /* texto branco */
+  border-radius: 0.5rem !important;
+  padding: 0.75rem 1rem !important;
+  box-shadow: 0 10px 30px rgba(189, 23, 23, 0.15) !important;
+}
