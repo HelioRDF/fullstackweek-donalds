@@ -86,6 +86,7 @@ Framework:
   > npx shadcn@2.3.0 add form
   > npx shadcn@2.3.0 add input
   > npx shadcn@2.3.0 add sonner
+  > npx shadcn@2.3.0 add separator
   - Number Format
     > npm i react-number-format@5.4.3
 
