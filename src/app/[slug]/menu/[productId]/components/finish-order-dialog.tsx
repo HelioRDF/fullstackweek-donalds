@@ -1,6 +1,10 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ConsumptionMethod } from "@prisma/client";
+import { Loader2Icon } from "lucide-react";
+import { useParams, useSearchParams } from "next/navigation";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { PatternFormat } from "react-number-format";
 import { z } from "zod";
@@ -26,17 +30,13 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
+import { createOrder } from "../../actions/create-order";
+import { CartContext } from "../../context/cart";
 import { isValidCpf } from "../../helpers/cpf";
 
 const formSchema = z.object({
-  nome: z.string().trim().min(1, {
+  name: z.string().trim().min(1, {
     message: "Informe o seu nome!",
-  }),
-  telefone: z.string().trim().min(1, {
-    message: "Informe o seu telefone!",
-  }),
-  endereco: z.string().trim().min(1, {
-    message: "Informe o seu endereço!",
   }),
 
   cpf: z
@@ -50,9 +50,6 @@ const formSchema = z.object({
     }),
 });
 type FormSchema = z.infer<typeof formSchema>;
-const onSubmit = (data: FormSchema) => {
-  console.log("Chamou a função!", data);
-};
 
 interface FinishOrderDialogProps {
   open: boolean;
@@ -60,15 +57,40 @@ interface FinishOrderDialogProps {
 }
 
 const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
+  const { slug } = useParams<{ slug: string }>();
+  const { products } = useContext(CartContext);
+  const searchParams = useSearchParams();
+  const [isLoading, setIsLoading] = useState(false);
+  //const consumptionMethod = searchParams.get("consumptionMethod");
   const msgVoltar = "<   Voltar";
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      nome: "",
+      name: "",
       cpf: "",
     },
     shouldUnregister: true,
   });
+
+  const onSubmit = async (data: FormSchema) => {
+    try {
+      console.log("!!!!!!!");
+      const consumptionMethod = searchParams.get(
+        "consumptionMethod"
+      ) as ConsumptionMethod;
+      await createOrder({
+        consumptionMethod,
+        customerCpf: data.cpf,
+        customerName: data.name,
+        products,
+        slug,
+      });
+      onOpenChange(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <Drawer open={open} onOpenChange={onOpenChange}>
       <DrawerTrigger className="w-full" asChild></DrawerTrigger>
@@ -84,7 +106,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
                 control={form.control}
-                name="nome"
+                name="name"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Nome</FormLabel>
@@ -122,7 +144,9 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                   type="submit"
                   className="rounded-full"
                   variant="destructive"
+                  disabled={isLoading}
                 >
+                  {isLoading && <Loader2Icon className="animate-spin" />}
                   Confirmar Pedido
                 </Button>
                 <DrawerClose>

@@ -65,6 +65,8 @@ Framework:
   > npx prisma format
   > npx prisma migrate dev //add_initial_tables
   > npx prisma db seed //Popular base com dados do seed.ts
+  > npx prisma generate //Atualizar os tipos dos campos
+  > npx prisma studio //Abrir SGBD
 
 - NEON DB (Banco de dados)
   https://neon.com/
@@ -83,7 +85,6 @@ Framework:
   > npx shadcn@2.3.0 add drawer
   > npx shadcn@2.3.0 add form
   > npx shadcn@2.3.0 add input
-
   - Number Format
     > npm i react-number-format@5.4.3
 
@@ -98,3 +99,5 @@ https://www.conventionalcommits.org/en/v1.0.0/
 Iniciar o APP
 
 > npm run dev
+
+> Progresso 04 1h32min
