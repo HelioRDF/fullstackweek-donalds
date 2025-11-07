@@ -1,16 +1,16 @@
+import { ConsumptionMethod } from "@prisma/client";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Link from "next/link";
-import { consumptionMethod } from "@prisma/client";
 
 interface ConsuptionMethodOptionProps {
   slug: string;
   imageUrl: string;
   imageAlt: string;
   buttonText: string;
-  option: consumptionMethod;
+  option: ConsumptionMethod;
 }
 
 const ConsumptionMethodOption = ({

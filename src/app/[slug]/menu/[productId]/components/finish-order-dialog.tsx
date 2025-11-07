@@ -61,7 +61,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
   const { slug } = useParams<{ slug: string }>();
   const { products } = useContext(CartContext);
   const searchParams = useSearchParams();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
   //const consumptionMethod = searchParams.get("consumptionMethod");
   const msgVoltar = "<   Voltar";
   const form = useForm<FormSchema>({

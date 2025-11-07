@@ -4,15 +4,11 @@ import { db } from "@/lib/prisma";
 
 import RestaurantCategories from "./components/categories";
 import RestaurantHeader from "./components/header";
-import Products from "./components/products";
 
 interface RestaurantMenuPageProps {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ consumptionMethod: string }>;
 }
-const isConsumptionMethodValid = (consumptionMethod: string) => {
-  return ["DINE_IN", "TAKEAWAY"].includes(consumptionMethod.toUpperCase());
-};
 const RestaurantMenuPage = async ({
   params,
   searchParams,
@@ -26,7 +22,7 @@ const RestaurantMenuPage = async ({
       },
     },
   });
-  const { consumptionMethod } = await searchParams;
+  const {} = await searchParams;
   if (!restaurant) {
     return notFound();
   }

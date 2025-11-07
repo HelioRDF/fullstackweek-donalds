@@ -13,7 +13,7 @@ import { CartContext } from "../../context/cart";
 import CartSheet from "./cart-sheet";
 
 interface ProductDetailsProps {
-  product: Prisma.ProductGetPayLoad<{
+  product: Prisma.ProductGetPayload<{
     include: {
       restaurant: {
         select: {

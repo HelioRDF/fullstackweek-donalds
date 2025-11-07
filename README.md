@@ -102,6 +102,8 @@ Iniciar o APP
 
 > npm run dev
 
-- Deploy via Vercel
+- Deploy via 
+
+>npm run build //Verificar erros
 
 

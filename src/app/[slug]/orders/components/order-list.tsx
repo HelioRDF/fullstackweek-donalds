@@ -63,7 +63,7 @@ const OrderList = ({ orders }: OrderListProps) => {
               className={`w-fit rounded-full px-2 py-1 text-xs font-semibold text-white ${
                 (
                   [
-                    OrderStatus.PAYMENT_CONFIRMED,
+                    // OrderStatus.PAYMENT_CONFIRMED,
                     OrderStatus.FINISHED,
                   ] as OrderStatus[]
                 ).includes(order.status)
