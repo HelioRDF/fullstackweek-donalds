@@ -102,4 +102,6 @@ Iniciar o APP
 
 > npm run dev
 
-> Progresso 04 1h32min
+- Deploy via Vercel
+
+
