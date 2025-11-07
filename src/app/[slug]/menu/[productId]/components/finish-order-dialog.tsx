@@ -53,7 +53,13 @@ type FormSchema = z.infer<typeof formSchema>;
 const onSubmit = (data: FormSchema) => {
   console.log("Chamou a função!", data);
 };
-const FinishOrderButton = () => {
+
+interface FinishOrderDialogProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
   const msgVoltar = "<   Voltar";
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
@@ -61,12 +67,11 @@ const FinishOrderButton = () => {
       nome: "",
       cpf: "",
     },
+    shouldUnregister: true,
   });
   return (
-    <Drawer>
-      <DrawerTrigger className="w-full" asChild>
-        <Button className="w-full">Concluir Pedido!</Button>
-      </DrawerTrigger>
+    <Drawer open={open} onOpenChange={onOpenChange}>
+      <DrawerTrigger className="w-full" asChild></DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Finalizar pedido</DrawerTitle>
@@ -134,4 +139,4 @@ const FinishOrderButton = () => {
   );
 };
 
-export default FinishOrderButton;
+export default FinishOrderDialog;
